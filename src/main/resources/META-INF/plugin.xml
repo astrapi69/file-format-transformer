@@ -1,18 +1,29 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.astrapi69.fileformattransformer</id>
-    <name>IntelliJ Platform Plugin file-format-transformer</name>
-    <vendor>astrapi69</vendor>
+    <name>file-format-transformer</name>
+    <vendor email="asterios.raptis@web.de" url="https://astrapi69.github.io/">Asterios Raptis</vendor>
+
+    <description><![CDATA[
+        An idea plugin that can transform provided input files to provided output file formats.
+        First version transforms only json to yaml. More transformation will come
+        ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.astrapi69.fileformattransformer.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.astrapi69.fileformattransformer.services.MyProjectService"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.astrapi69.fileformattransformer.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+
+        <group id="File.TransformAction" text="Transform" description="transform file formats">
+            <action id="File.Transform.Action.JsonFileToYamlFileAction"
+                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileAction"
+                    text="json to yaml">
+            </action>
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+
+    </actions>
+
 </idea-plugin>
