@@ -1,8 +1,8 @@
 # file-format-transformer
 
 ![Build](https://github.com/astrapi69/file-format-transformer/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/com.github.astrapi69.fileformattransformer)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/com.github.astrapi69.fileformattransformer)
+[![Version](https://img.shields.io/jetbrains/plugin/v/com.github.astrapi69.fileformattransformer.svg)](https://plugins.jetbrains.com/plugin/com.github.astrapi69.fileformattransformer)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.astrapi69.fileformattransformer.svg)](https://plugins.jetbrains.com/plugin/com.github.astrapi69.fileformattransformer)
 
 <!-- Plugin description -->
 
