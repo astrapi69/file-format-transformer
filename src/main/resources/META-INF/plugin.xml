@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.astrapi69.fileformattransformer</id>
-    <name>file-format-transformer</name>
+    <name>File Format Transformer</name>
     <vendor email="asterios.raptis@web.de" url="https://astrapi69.github.io/">Asterios Raptis</vendor>
     <!-- 2021.3.3 or higher -->
     <idea-version since-build="213.7172.25"/>
@@ -18,13 +18,21 @@
 
     <actions>
 
-        <group id="File.TransformAction" text="Transform" description="transform file formats">
+        <group id="File.TransformAction" text="Transform" description="Transform file formats">
             <action id="File.Transform.Action.JsonFileToYamlFileAction"
                     class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileAction"
-                    text="json to yaml">
+                    text="Json To Yaml"
+                    description="Convert json to yaml">
             </action>
-            <add-to-group group-id="MainMenu" anchor="last"/>
+            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
         </group>
+
+        <action id="File.Transform.Action.JsonFileToYamlFileContextMenuAction"
+                class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileContextMenuAction"
+                text="Json To Yaml"
+                description="Convert json to yaml">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
 
     </actions>
 
