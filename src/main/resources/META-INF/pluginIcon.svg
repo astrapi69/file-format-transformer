@@ -1,43 +1,87 @@
-<svg width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg"
-     desc="Created with ImageTracer.java version 1.1.2">
-    <path desc="l 1 p 0" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0.0"
-          d="M 0.5 0.0 L 40.0 0.5 L 39.5 40.0 L 0.0 39.5 L 0.5 0.0 Z"/>
-    <path desc="l 7 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
-          d="M 13.5 3.0 L 21.5 3.0 Q 26.6 2.4 28.0 5.5 L 26.5 5.0 L 14.5 4.0 L 7.0 9.5 L 5.5 13.0 L 5.0 11.5 L 9.5 5.0 L 13.5 3.0 Z"/>
-    <path desc="l 4 p 0" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
-          d="M 17.5 4.0 L 21.0 4.5 L 17.5 5.0 L 17.5 4.0 Z"/>
-    <path desc="l 0 p 0" fill="rgb(31,133,182)" stroke="rgb(31,133,182)" stroke-width="1" opacity="0.996078431372549"
-          d="M 15.5 5.0 Q 23.3 3.3 25.0 7.5 L 27.5 13.0 L 34.0 15.5 L 35.0 25.5 L 30.5 32.0 Q 26.8 35.3 18.5 34.0 Q 10.6 31.9 7.0 25.5 L 5.0 18.5 L 6.0 14.5 Q 7.4 8.4 12.5 6.0 L 15.5 5.0 Z"/>
-    <path desc="l 10 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.4666666666666667"
-          d="M 10.5 6.0 L 7.5 10.0 L 10.5 6.0 Z"/>
-    <path desc="l 3 p 0" fill="rgb(230,35,23)" stroke="rgb(230,35,23)" stroke-width="1" opacity="0.9803921568627451"
-          d="M 24.5 6.0 Q 30.6 4.9 33.0 7.5 L 34.0 14.5 L 32.5 14.0 L 26.0 11.5 L 24.5 6.0 Z"/>
-    <path desc="l 15 p 0" fill="rgb(247,13,13)" stroke="rgb(247,13,13)" stroke-width="1" opacity="0.6470588235294118"
-          d="M 31.5 6.0 L 34.0 6.5 L 33.5 10.0 L 32.5 7.0 L 31.5 6.0 Z"/>
-    <path desc="l 4 p 1" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
-          d="M 10.5 7.0 L 8.5 10.0 L 10.5 7.0 Z"/>
-    <path desc="l 5 p 0" fill="rgb(70,18,230)" stroke="rgb(70,18,230)" stroke-width="1" opacity="1.0"
-          d="M 14.5 8.0 L 23.0 8.5 L 22.5 11.0 L 14.0 10.5 L 14.5 8.0 Z"/>
-    <path desc="l 7 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
-          d="M 4.5 14.0 L 6.0 24.5 L 5.0 24.5 Q 2.4 20.9 4.5 14.0 Z"/>
-    <path desc="l 7 p 2" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
-          d="M 35.5 14.0 L 37.0 17.5 L 37.0 25.5 L 36.0 25.5 Q 36.6 17.3 35.5 14.0 Z"/>
-    <path desc="l 8 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.7019607843137254"
-          d="M 35.5 18.0 L 36.0 22.5 L 35.0 22.5 L 35.5 18.0 Z"/>
-    <path desc="l 2 p 0" fill="rgb(222,227,109)" stroke="rgb(222,227,109)" stroke-width="1" opacity="0.984313725490196"
-          d="M 35.5 24.0 L 36.0 29.5 L 32.5 34.0 L 25.5 35.0 L 25.5 34.0 L 33.0 29.5 L 35.5 24.0 Z"/>
-    <path desc="l 3 p 1" fill="rgb(230,35,23)" stroke="rgb(230,35,23)" stroke-width="1" opacity="0.9803921568627451"
-          d="M 17.5 25.0 L 26.0 25.5 L 25.5 28.0 L 17.0 27.5 L 17.5 25.0 Z"/>
-    <path desc="l 7 p 3" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
-          d="M 6.5 26.0 L 11.5 32.0 L 17.0 34.5 L 15.5 35.0 L 7.0 28.5 L 6.5 26.0 Z"/>
-    <path desc="l 4 p 2" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
-          d="M 8.5 27.0 L 11.5 31.0 L 8.5 27.0 Z"/>
-    <path desc="l 10 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.4666666666666667"
-          d="M 8.5 28.0 L 10.5 31.0 L 8.5 28.0 Z"/>
-    <path desc="l 9 p 0" fill="rgb(236,237,92)" stroke="rgb(236,237,92)" stroke-width="1" opacity="0.42745098039215684"
-          d="M 34.5 32.0 L 33.5 34.0 L 34.5 32.0 Z"/>
-    <path desc="l 8 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.7019607843137254"
-          d="M 20.5 34.0 L 24.0 34.5 L 20.5 35.0 L 20.5 34.0 Z"/>
-    <path desc="l 7 p 4" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
-          d="M 23.5 35.0 L 26.0 35.5 L 23.5 36.0 L 23.5 35.0 Z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg162"
+   width="12.8"
+   height="12.8"
+   viewBox="0 0 12.8 12.8"
+   sodipodi:docname="pluginIcon.png"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs166" />
+  <sodipodi:namedview
+     id="namedview164"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="64.609374"
+     inkscape:cx="7.661427"
+     inkscape:cy="6.4077389"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g168" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g168">
+    <image
+       width="12.8"
+       height="12.8"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,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
+FS0iAAAAAElFTkSuQmCC
+"
+       id="image170" />
+  </g>
 </svg>
