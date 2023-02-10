@@ -1,11 +1,43 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32.0845 7.94025V4H24.0203V7.9896H16.029V4H7.91553V7.94025H4V36H16.0044V32.0045C16.0058 30.9457 16.4274 29.9308 17.1766 29.1826C17.9258 28.4345 18.9412 28.0143 20 28.0143C21.0588 28.0143 22.0743 28.4345 22.8234 29.1826C23.5726 29.9308 23.9942 30.9457 23.9956 32.0045V36H36V7.94025H32.0845Z"
-          fill="url(#paint0_linear)"/>
-    <defs>
-        <linearGradient id="paint0_linear" x1="2.94192" y1="4.89955" x2="37.7772" y2="39.7345" gradientUnits="userSpaceOnUse">
-            <stop offset="0.15937" stop-color="#3BEA62"/>
-            <stop offset="0.5404" stop-color="#3C99CC"/>
-            <stop offset="0.93739" stop-color="#6B57FF"/>
-        </linearGradient>
-    </defs>
+<svg width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     desc="Created with ImageTracer.java version 1.1.2">
+    <path desc="l 1 p 0" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0.0"
+          d="M 0.5 0.0 L 40.0 0.5 L 39.5 40.0 L 0.0 39.5 L 0.5 0.0 Z"/>
+    <path desc="l 7 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
+          d="M 13.5 3.0 L 21.5 3.0 Q 26.6 2.4 28.0 5.5 L 26.5 5.0 L 14.5 4.0 L 7.0 9.5 L 5.5 13.0 L 5.0 11.5 L 9.5 5.0 L 13.5 3.0 Z"/>
+    <path desc="l 4 p 0" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
+          d="M 17.5 4.0 L 21.0 4.5 L 17.5 5.0 L 17.5 4.0 Z"/>
+    <path desc="l 0 p 0" fill="rgb(31,133,182)" stroke="rgb(31,133,182)" stroke-width="1" opacity="0.996078431372549"
+          d="M 15.5 5.0 Q 23.3 3.3 25.0 7.5 L 27.5 13.0 L 34.0 15.5 L 35.0 25.5 L 30.5 32.0 Q 26.8 35.3 18.5 34.0 Q 10.6 31.9 7.0 25.5 L 5.0 18.5 L 6.0 14.5 Q 7.4 8.4 12.5 6.0 L 15.5 5.0 Z"/>
+    <path desc="l 10 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.4666666666666667"
+          d="M 10.5 6.0 L 7.5 10.0 L 10.5 6.0 Z"/>
+    <path desc="l 3 p 0" fill="rgb(230,35,23)" stroke="rgb(230,35,23)" stroke-width="1" opacity="0.9803921568627451"
+          d="M 24.5 6.0 Q 30.6 4.9 33.0 7.5 L 34.0 14.5 L 32.5 14.0 L 26.0 11.5 L 24.5 6.0 Z"/>
+    <path desc="l 15 p 0" fill="rgb(247,13,13)" stroke="rgb(247,13,13)" stroke-width="1" opacity="0.6470588235294118"
+          d="M 31.5 6.0 L 34.0 6.5 L 33.5 10.0 L 32.5 7.0 L 31.5 6.0 Z"/>
+    <path desc="l 4 p 1" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
+          d="M 10.5 7.0 L 8.5 10.0 L 10.5 7.0 Z"/>
+    <path desc="l 5 p 0" fill="rgb(70,18,230)" stroke="rgb(70,18,230)" stroke-width="1" opacity="1.0"
+          d="M 14.5 8.0 L 23.0 8.5 L 22.5 11.0 L 14.0 10.5 L 14.5 8.0 Z"/>
+    <path desc="l 7 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
+          d="M 4.5 14.0 L 6.0 24.5 L 5.0 24.5 Q 2.4 20.9 4.5 14.0 Z"/>
+    <path desc="l 7 p 2" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
+          d="M 35.5 14.0 L 37.0 17.5 L 37.0 25.5 L 36.0 25.5 Q 36.6 17.3 35.5 14.0 Z"/>
+    <path desc="l 8 p 0" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.7019607843137254"
+          d="M 35.5 18.0 L 36.0 22.5 L 35.0 22.5 L 35.5 18.0 Z"/>
+    <path desc="l 2 p 0" fill="rgb(222,227,109)" stroke="rgb(222,227,109)" stroke-width="1" opacity="0.984313725490196"
+          d="M 35.5 24.0 L 36.0 29.5 L 32.5 34.0 L 25.5 35.0 L 25.5 34.0 L 33.0 29.5 L 35.5 24.0 Z"/>
+    <path desc="l 3 p 1" fill="rgb(230,35,23)" stroke="rgb(230,35,23)" stroke-width="1" opacity="0.9803921568627451"
+          d="M 17.5 25.0 L 26.0 25.5 L 25.5 28.0 L 17.0 27.5 L 17.5 25.0 Z"/>
+    <path desc="l 7 p 3" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
+          d="M 6.5 26.0 L 11.5 32.0 L 17.0 34.5 L 15.5 35.0 L 7.0 28.5 L 6.5 26.0 Z"/>
+    <path desc="l 4 p 2" fill="rgb(31,128,201)" stroke="rgb(31,128,201)" stroke-width="1" opacity="0.8392156862745098"
+          d="M 8.5 27.0 L 11.5 31.0 L 8.5 27.0 Z"/>
+    <path desc="l 10 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.4666666666666667"
+          d="M 8.5 28.0 L 10.5 31.0 L 8.5 28.0 Z"/>
+    <path desc="l 9 p 0" fill="rgb(236,237,92)" stroke="rgb(236,237,92)" stroke-width="1" opacity="0.42745098039215684"
+          d="M 34.5 32.0 L 33.5 34.0 L 34.5 32.0 Z"/>
+    <path desc="l 8 p 1" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.7019607843137254"
+          d="M 20.5 34.0 L 24.0 34.5 L 20.5 35.0 L 20.5 34.0 Z"/>
+    <path desc="l 7 p 4" fill="rgb(27,126,203)" stroke="rgb(27,126,203)" stroke-width="1" opacity="0.07450980392156863"
+          d="M 23.5 35.0 L 26.0 35.5 L 23.5 36.0 L 23.5 35.0 Z"/>
 </svg>
