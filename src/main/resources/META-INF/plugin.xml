@@ -34,6 +34,15 @@
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
 
+        <group id="ProjectViewPopupMenu.TransformAction" text="Transform" description="Transform file formats">
+            <action id="ProjectViewPopupMenu.Transform.Action.YamlFileToPropertiesFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.YamlFileToPropertiesFileContextMenuAction"
+                    text="Yaml To Properties"
+                    description="Convert json to yaml">
+            </action>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </group>
+
     </actions>
 
 </idea-plugin>
