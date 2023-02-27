@@ -7,26 +7,34 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
+import io.github.astrapi69.collection.properties.PropertiesExtensions
+import io.github.astrapi69.io.StringOutputStream
 import io.github.astrapi69.json.JsonToYamlExtensions
+import io.github.astrapi69.yaml.PropertiesToYamlExtensions
+import io.github.astrapi69.yaml.YamlToPropertiesExtensions
+import io.github.astrapi69.yaml.YamlToPropertiesExtensions.toTreeMap
+import java.io.OutputStream
 
-class JsonFileToYamlFileContextMenuAction: AnAction() {
+
+class PropertiesFileToYamlFileContextMenuAction: AnAction() {
 
     override fun actionPerformed(event: AnActionEvent) {
         val it: VirtualFile? = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if(it != null) {
             val loadText = VfsUtilCore.loadText(it)
-            val yaml = JsonToYamlExtensions.toYaml(loadText)
+            val yaml = PropertiesToYamlExtensions.toYamlString(loadText)
             WriteAction.run<Throwable> {
                 val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
                     it.parent, it.nameWithoutExtension, "yaml")
                 VfsUtil.saveText(createChildSequent, yaml) }
         }
+
     }
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if(it != null && it is VirtualFile) {
-            event.presentation.isEnabledAndVisible = it.extension.equals("json")
+            event.presentation.isEnabledAndVisible = it.extension.equals("properties")
         }
     }
 }

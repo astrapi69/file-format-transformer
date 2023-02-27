@@ -34,8 +34,8 @@ class YamlFileToPropertiesFileContextMenuAction: AnAction() {
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null) {
-            event.presentation.isEnabledAndVisible = true
+        if(it != null && it is VirtualFile) {
+            event.presentation.isEnabledAndVisible = it.extension.equals("yml") || it.extension.equals("yaml")
         }
     }
 }

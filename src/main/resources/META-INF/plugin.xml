@@ -27,14 +27,23 @@
             <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
         </group>
 
-        <action id="File.Transform.Action.JsonFileToYamlFileContextMenuAction"
-                class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileContextMenuAction"
-                text="Json To Yaml"
-                description="Convert json to yaml">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-        </action>
 
-        <group id="ProjectViewPopupMenu.TransformAction" text="Transform" description="Transform file formats">
+        <group id="ProjectViewPopupMenu.TransformAction"
+               text="Transform"
+               description="Transform file formats">
+
+            <action id="File.Transform.Action.JsonFileToYamlFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileContextMenuAction"
+                    text="Json To Yaml"
+                    description="Convert json to yaml">
+            </action>
+
+            <action id="File.Transform.Action.PropertiesFileToYamlFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.PropertiesFileToYamlFileContextMenuAction"
+                    text="Properties To Yaml"
+                    description="Convert json to yaml">
+            </action>
+
             <action id="ProjectViewPopupMenu.Transform.Action.YamlFileToPropertiesFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.YamlFileToPropertiesFileContextMenuAction"
                     text="Yaml To Properties"
