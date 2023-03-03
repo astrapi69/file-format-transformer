@@ -7,14 +7,7 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
-import io.github.astrapi69.collection.properties.PropertiesExtensions
-import io.github.astrapi69.io.StringOutputStream
-import io.github.astrapi69.json.JsonToYamlExtensions
 import io.github.astrapi69.yaml.PropertiesToYamlExtensions
-import io.github.astrapi69.yaml.YamlToPropertiesExtensions
-import io.github.astrapi69.yaml.YamlToPropertiesExtensions.toTreeMap
-import java.io.OutputStream
-
 
 class PropertiesFileToYamlFileContextMenuAction: AnAction() {
 
@@ -33,7 +26,7 @@ class PropertiesFileToYamlFileContextMenuAction: AnAction() {
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null && it is VirtualFile) {
+        if(it != null) {
             event.presentation.isEnabledAndVisible = it.extension.equals("properties")
         }
     }

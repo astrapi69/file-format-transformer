@@ -49,6 +49,18 @@
                     text="Yaml To Properties"
                     description="Convert json to yaml">
             </action>
+
+            <action id="ProjectViewPopupMenu.Transform.Action.XmlFileToJsonFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.XmlFileToJsonFileContextMenuAction"
+                    text="Xml To Json"
+                    description="Convert xml to json">
+            </action>
+
+            <action id="ProjectViewPopupMenu.Transform.Action.JsonFileToXmlFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToXmlFileContextMenuAction"
+                    text="Json To Xml"
+                    description="Convert json to xml">
+            </action>
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </group>
 

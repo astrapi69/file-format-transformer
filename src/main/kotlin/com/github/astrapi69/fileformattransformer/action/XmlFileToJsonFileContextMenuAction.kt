@@ -7,12 +7,7 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
-import io.github.astrapi69.collection.properties.PropertiesExtensions
-import io.github.astrapi69.io.StringOutputStream
-import io.github.astrapi69.json.JsonToYamlExtensions
-import io.github.astrapi69.yaml.YamlToPropertiesExtensions
-import io.github.astrapi69.yaml.YamlToPropertiesExtensions.toTreeMap
-import java.io.OutputStream
+import io.github.astrapi69.json.XmlToJsonExtensions
 
 
 class XmlFileToJsonFileContextMenuAction: AnAction() {
@@ -21,20 +16,18 @@ class XmlFileToJsonFileContextMenuAction: AnAction() {
         val it: VirtualFile? = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if(it != null) {
             val loadText = VfsUtilCore.loadText(it)
-//            val properties = YamlToPropertiesExtensions.toPropertiesFromYamlString(loadText);
-//            val outputStream = StringOutputStream()
-//            PropertiesExtensions.export(properties, outputStream)
-//
-//            WriteAction.run<Throwable> {
-//                val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-//                    it.parent, it.nameWithoutExtension, "properties")
-//                VfsUtil.saveText(createChildSequent, outputStream.toString()) }
+            val json = XmlToJsonExtensions.toJson(loadText)
+
+            WriteAction.run<Throwable> {
+                val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
+                    it.parent, it.nameWithoutExtension, "json")
+                VfsUtil.saveText(createChildSequent, json) }
         }
     }
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null && it is VirtualFile) {
+        if(it != null) {
             event.presentation.isEnabledAndVisible = it.extension.equals("xml")
         }
     }

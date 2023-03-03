@@ -9,7 +9,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.8.0"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.12.0"
+    id("org.jetbrains.intellij") version "1.13.1"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
     // Gradle Qodana Plugin
@@ -32,7 +32,7 @@ kotlin {
 }
 
 dependencies {
-    implementation("io.github.astrapi69:json-extensions:2.1")
+    implementation("io.github.astrapi69:json-extensions:2.2")
     implementation("io.github.astrapi69:yaml-to-prop-to-yaml:2")
     implementation("io.github.astrapi69:silly-io:2.2")
     implementation("io.github.astrapi69:silly-collection:21")
