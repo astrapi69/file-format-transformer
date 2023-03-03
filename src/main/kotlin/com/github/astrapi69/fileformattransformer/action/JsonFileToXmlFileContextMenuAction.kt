@@ -8,7 +8,6 @@ import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import io.github.astrapi69.json.JsonToXmlExtensions
-import com.intellij.openapi.actionSystem.ActionUpdateThread
 
 class JsonFileToXmlFileContextMenuAction: AnAction() {
 
