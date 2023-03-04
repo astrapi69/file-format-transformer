@@ -14,6 +14,17 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsConfigurable"
+                id="com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsConfigurable"
+                displayName="File Format Transformer Plugin Application Settings"/>
+        <projectConfigurable
+                parentId="tools"
+                instance="com.github.astrapi69.fileformattransformer.setting.ProjectSettingsConfigurable"
+                id="com.github.astrapi69.fileformattransformer.setting.ProjectSettingsConfigurable"
+                displayName="File Format Transformer Plugin Project Settings"
+                nonDefaultProject="true"/>
     </extensions>
 
     <actions>
