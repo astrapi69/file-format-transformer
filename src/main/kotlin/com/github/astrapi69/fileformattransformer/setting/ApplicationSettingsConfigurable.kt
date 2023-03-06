@@ -9,7 +9,7 @@ import javax.swing.JComponent
  * Provides controller functionality for application settings.
  */
 class ApplicationSettingsConfigurable : Configurable {
-    private var mySettingsComponent: ApplicationSettingsComponent? = null
+    private var mySettingsComponent: AppSettingsComponent? = null
 
     // A default constructor with no arguments is required because this implementation
     // is registered as an applicationConfigurable EP
@@ -22,7 +22,7 @@ class ApplicationSettingsConfigurable : Configurable {
     }
 
     override fun createComponent(): JComponent? {
-        mySettingsComponent = ApplicationSettingsComponent()
+        mySettingsComponent = AppSettingsComponent()
         return mySettingsComponent!!.panel
     }
 
