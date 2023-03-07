@@ -1,4 +1,4 @@
-package com.github.astrapi69.fileformattransformer.setting;
+package com.github.astrapi69.fileformattransformer.settings;
 
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
@@ -14,7 +14,8 @@ import static com.github.astrapi69.fileformattransformer.PluginBundle.message;
 /**
  * Supports creating and managing a {@link JPanel} for the Settings Dialog.
  */
-public class AppSettingsComponent {
+public class AppSettingsComponent
+{
 
   private final JPanel myMainPanel;
   private final JPanel fillVerticallyPanel;
@@ -35,7 +36,7 @@ public class AppSettingsComponent {
     this.lblRadioGroupLabel = new JBLabel(message("setting.transform.label"));
     this.fillVerticallyPanel = new JPanel();
     myMainPanel = FormBuilder.createFormBuilder()
-            .addLabeledComponent(lblRadioGroupLabel, newFileRadioButton, 1, false)
+            .addLabeledComponent(lblRadioGroupLabel, newFileRadioButton, 1, true)
             .addComponent(overwriteFileRadioButton, 1)
             .addComponentFillVertically(this.fillVerticallyPanel, 0)
             .getPanel();
@@ -44,27 +45,6 @@ public class AppSettingsComponent {
 
   public JPanel getPanel() {
     return myMainPanel;
-  }
-
-  public JComponent getPreferredFocusedComponent() {
-    return myUserNameText;
-  }
-
-  @NotNull
-  public String getUserNameText() {
-    return myUserNameText.getText();
-  }
-
-  public void setUserNameText(@NotNull String newText) {
-    myUserNameText.setText(newText);
-  }
-
-  public boolean getIdeaUserStatus() {
-    return myIdeaUserStatus.isSelected();
-  }
-
-  public void setIdeaUserStatus(boolean newStatus) {
-    myIdeaUserStatus.setSelected(newStatus);
   }
 
 }

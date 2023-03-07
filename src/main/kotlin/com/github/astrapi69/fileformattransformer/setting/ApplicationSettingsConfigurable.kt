@@ -9,7 +9,7 @@ import javax.swing.JComponent
  * Provides controller functionality for application settings.
  */
 class ApplicationSettingsConfigurable : Configurable {
-    private var mySettingsComponent: AppSettingsComponent? = null
+    private var mySettingsComponent: ApplicationSettingsComponent? = null
 
     // A default constructor with no arguments is required because this implementation
     // is registered as an applicationConfigurable EP
@@ -22,27 +22,28 @@ class ApplicationSettingsConfigurable : Configurable {
     }
 
     override fun createComponent(): JComponent? {
-        mySettingsComponent = AppSettingsComponent()
+        mySettingsComponent =
+            ApplicationSettingsComponent()
         return mySettingsComponent!!.panel
     }
 
     override fun isModified(): Boolean {
         val settings = instance
-        var modified = mySettingsComponent!!.userNameText != settings.userId
-        modified = modified or (mySettingsComponent!!.ideaUserStatus != settings.ideaStatus)
+        var modified = mySettingsComponent!!.newFileFlag != settings.newFile
+        modified = modified or (mySettingsComponent!!.overwriteFileFlag != settings.overwriteFile)
         return modified
     }
 
     override fun apply() {
         val settings = instance
-        settings.userId = mySettingsComponent!!.userNameText
-        settings.ideaStatus = mySettingsComponent!!.ideaUserStatus
+        settings.newFile = mySettingsComponent!!.newFileFlag
+        settings.overwriteFile = mySettingsComponent!!.overwriteFileFlag
     }
 
     override fun reset() {
         val settings = instance
-        mySettingsComponent!!.userNameText = settings.userId
-        mySettingsComponent!!.ideaUserStatus = settings.ideaStatus
+        mySettingsComponent!!.newFileFlag = settings.newFile
+        mySettingsComponent!!.overwriteFileFlag = settings.overwriteFile
     }
 
     override fun disposeUIResources() {

@@ -13,10 +13,11 @@ import com.intellij.util.xmlb.XmlSerializerUtil
  */
 @State(name = "com.github.astrapi69.fileformattransformer.setting.AppSettingsState", storages = [Storage("SdkSettingsPlugin.xml")])
 class ApplicationSettingsState : PersistentStateComponent<ApplicationSettingsState?> {
+
     @JvmField
-    var userId = ""
+    var newFile = true
     @JvmField
-    var ideaStatus = false
+    var overwriteFile = false
     override fun getState(): ApplicationSettingsState? {
         return this
     }

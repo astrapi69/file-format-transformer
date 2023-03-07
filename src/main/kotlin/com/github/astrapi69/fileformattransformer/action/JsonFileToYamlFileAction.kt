@@ -1,5 +1,6 @@
 package com.github.astrapi69.fileformattransformer.action
 
+import com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsState
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.WriteAction
@@ -37,11 +38,16 @@ class JsonFileToYamlFileAction: AnAction() {
             WriteAction.run<Throwable> {
                 val loadText = VfsUtilCore.loadText(it)
                 val yaml = JsonToYamlExtensions.toYaml(loadText)
-                val createChildSequent: VirtualFile = VfsUtil.createChildSequent(
-                    event.project,
-                    it.parent, it.nameWithoutExtension, "yaml"
-                )
-                VfsUtil.saveText(createChildSequent, yaml)
+
+                if(ApplicationSettingsState.instance.newFile) {
+                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(
+                        event.project,
+                        it.parent, it.nameWithoutExtension, "yaml"
+                    )
+                    VfsUtil.saveText(createChildSequent, yaml)
+                } else {
+                    VfsUtil.saveText(it, yaml)
+                }
             }
 
             Messages.showMessageDialog(

@@ -1,5 +1,6 @@
 package com.github.astrapi69.fileformattransformer.action
 
+import com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsState
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -16,10 +17,18 @@ class JsonFileToXmlFileContextMenuAction: AnAction() {
         if(it != null) {
             val loadText = VfsUtilCore.loadText(it)
             val xml = JsonToXmlExtensions.toXml(loadText)
-            WriteAction.run<Throwable> {
-                val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                    it.parent, it.nameWithoutExtension, "xml")
-                VfsUtil.saveText(createChildSequent, xml) }
+
+            if(ApplicationSettingsState.instance.newFile) {
+                WriteAction.run<Throwable> {
+                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
+                        it.parent, it.nameWithoutExtension, "xml")
+                    VfsUtil.saveText(createChildSequent, xml) }
+            } else {
+                WriteAction.run<Throwable> {
+                    VfsUtil.saveText(it, xml)
+                    it.rename(it, it.nameWithoutExtension + ".xml")
+                }
+            }
         }
     }
 
