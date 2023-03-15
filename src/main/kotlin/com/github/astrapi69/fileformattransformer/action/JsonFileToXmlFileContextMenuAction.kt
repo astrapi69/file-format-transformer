@@ -18,13 +18,12 @@ class JsonFileToXmlFileContextMenuAction: AnAction() {
             val loadText = VfsUtilCore.loadText(it)
             val xml = JsonToXmlExtensions.toXml(loadText)
 
-            if(ApplicationSettingsState.instance.newFile) {
-                WriteAction.run<Throwable> {
+            WriteAction.run<Throwable> {
+                if(ApplicationSettingsState.instance.newFile) {
                     val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
                         it.parent, it.nameWithoutExtension, "xml")
-                    VfsUtil.saveText(createChildSequent, xml) }
-            } else {
-                WriteAction.run<Throwable> {
+                    VfsUtil.saveText(createChildSequent, xml)
+                } else {
                     VfsUtil.saveText(it, xml)
                     it.rename(it, it.nameWithoutExtension + ".xml")
                 }
