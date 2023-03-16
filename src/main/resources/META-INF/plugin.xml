@@ -3,8 +3,6 @@
     <id>com.github.astrapi69.fileformattransformer</id>
     <name>File Format Transformer</name>
     <vendor email="asterios.raptis@web.de" url="https://astrapi69.github.io/">Asterios Raptis</vendor>
-    <!-- 2021.3.3 or higher -->
-    <idea-version since-build="213.7172.25"/>
 
     <description><![CDATA[
         An idea plugin that can transform provided input files to provided output file formats.
