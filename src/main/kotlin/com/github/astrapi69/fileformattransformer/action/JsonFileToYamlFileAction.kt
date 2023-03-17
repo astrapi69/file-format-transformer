@@ -47,6 +47,7 @@ class JsonFileToYamlFileAction: AnAction() {
                     VfsUtil.saveText(createChildSequent, yaml)
                 } else {
                     VfsUtil.saveText(it, yaml)
+                    it.rename(it, it.nameWithoutExtension + ".yaml")
                 }
             }
 

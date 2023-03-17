@@ -9,7 +9,6 @@ import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import io.github.astrapi69.json.JsonToXmlExtensions
-import io.github.astrapi69.xml.XmlExtensions
 
 class JsonFileToXmlFileContextMenuAction: AnAction() {
 
@@ -17,15 +16,14 @@ class JsonFileToXmlFileContextMenuAction: AnAction() {
         val it: VirtualFile? = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if(it != null) {
             val loadText = VfsUtilCore.loadText(it)
-            val xml = JsonToXmlExtensions.toXml(loadText)
-            val formattedXml = XmlExtensions.prettyPrint(xml)
+            val xml = JsonToXmlExtensions.toXml(loadText, 4)
             WriteAction.run<Throwable> {
                 if(ApplicationSettingsState.instance.newFile) {
                     val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
                         it.parent, it.nameWithoutExtension, "xml")
-                    VfsUtil.saveText(createChildSequent, formattedXml)
+                    VfsUtil.saveText(createChildSequent, xml)
                 } else {
-                    VfsUtil.saveText(it, formattedXml)
+                    VfsUtil.saveText(it, xml)
                     it.rename(it, it.nameWithoutExtension + ".xml")
                 }
             }

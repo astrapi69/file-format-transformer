@@ -1,5 +1,6 @@
 package com.github.astrapi69.fileformattransformer.action
 
+import com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsState
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -21,11 +22,18 @@ class YamlFileToPropertiesFileContextMenuAction: AnAction() {
             val properties = YamlToPropertiesExtensions.toPropertiesFromYamlString(loadText)
             val outputStream = StringOutputStream()
             PropertiesExtensions.export(properties, outputStream)
+            val propertiesAsString = outputStream.toString()
 
             WriteAction.run<Throwable> {
-                val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                    it.parent, it.nameWithoutExtension, "properties")
-                VfsUtil.saveText(createChildSequent, outputStream.toString()) }
+                if (ApplicationSettingsState.instance.newFile) {
+                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
+                        it.parent, it.nameWithoutExtension, "properties")
+                    VfsUtil.saveText(createChildSequent, propertiesAsString)
+                } else {
+                    VfsUtil.saveText(it, propertiesAsString)
+                    it.rename(it, it.nameWithoutExtension + ".json")
+                }
+            }
         }
     }
 
