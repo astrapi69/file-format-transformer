@@ -6,9 +6,17 @@
 
 <!-- Plugin description -->
 
-An idea plugin that can transform provided input files to provided output file formats.
-First version transforms only json to yaml. More transformation will come
+An idea plugin that can transform provided input files to the following output file formats:
 
+* json to yaml
+* json to xml
+* xml to json
+* properties to yaml
+* yaml to properties
+
+For transform a file to another format use the context menu from the file in the Project View
+
+[Plugin Homepage](https://plugins.jetbrains.com/plugin/20994-file-format-transformer)
 <!-- Plugin description end -->
 
 ## Installation
