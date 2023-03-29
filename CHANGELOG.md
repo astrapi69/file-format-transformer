@@ -4,7 +4,19 @@
 
 ## [Unreleased]
 
-## [1.0.0] - 2023-02-03
+
+## [1.6.0] 
+
+Added file transformations for: 
+
+* json to yaml
+* json to xml
+* xml to json
+* properties to yaml
+* properties to xml
+* yaml to properties
+
+## [1.0.0] 
 
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)

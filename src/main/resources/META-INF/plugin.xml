@@ -13,6 +13,7 @@ An idea plugin that can transform provided input files to the following output f
 * json to xml
 * xml to json
 * properties to yaml
+* properties to xml
 * yaml to properties
 
 For transform a file to another format use the context menu from the file in the Project View
@@ -33,49 +34,47 @@ For transform a file to another format use the context menu from the file in the
 
     <actions>
 
-        <group id="File.TransformAction" text="Transform" description="Transform file formats">
-            <action id="File.Transform.Action.JsonFileToYamlFileAction"
-                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileAction"
-                    text="Json To Yaml"
-                    description="Convert json to yaml">
-            </action>
-            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
-        </group>
-
         <group id="ProjectViewPopupMenu.TransformAction"
                text="Transform"
+               popup="true"
                description="Transform file formats">
 
             <action id="File.Transform.Action.JsonFileToYamlFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileContextMenuAction"
-                    text="Json To Yaml"
+                    text="To Yaml"
                     description="Convert json to yaml">
             </action>
 
             <action id="File.Transform.Action.PropertiesFileToYamlFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.PropertiesFileToYamlFileContextMenuAction"
-                    text="Properties To Yaml"
-                    description="Convert json to yaml">
+                    text="To Yaml"
+                    description="Convert properties to yaml">
+            </action>
+
+            <action id="File.Transform.Action.PropertiesFileToXmlFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.PropertiesFileToXmlFileContextMenuAction"
+                    text="To Xml"
+                    description="Convert properties to xml">
             </action>
 
             <action id="ProjectViewPopupMenu.Transform.Action.YamlFileToPropertiesFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.YamlFileToPropertiesFileContextMenuAction"
-                    text="Yaml To Properties"
-                    description="Convert json to yaml">
+                    text="To Properties"
+                    description="Convert yaml to properties">
             </action>
 
             <action id="ProjectViewPopupMenu.Transform.Action.XmlFileToJsonFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.XmlFileToJsonFileContextMenuAction"
-                    text="Xml To Json"
+                    text="To Json"
                     description="Convert xml to json">
             </action>
 
             <action id="ProjectViewPopupMenu.Transform.Action.JsonFileToXmlFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.JsonFileToXmlFileContextMenuAction"
-                    text="Json To Xml"
+                    text="To Xml"
                     description="Convert json to xml">
             </action>
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="ProjectViewPopupMenuRefactoringGroup"/>
         </group>
 
     </actions>

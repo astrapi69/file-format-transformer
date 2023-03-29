@@ -12,6 +12,7 @@ An idea plugin that can transform provided input files to the following output f
 * json to xml
 * xml to json
 * properties to yaml
+* properties to xml
 * yaml to properties
 
 For transform a file to another format use the context menu from the file in the Project View
