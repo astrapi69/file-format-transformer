@@ -15,6 +15,7 @@ An idea plugin that can transform provided input files to the following output f
 * properties to yaml
 * properties to xml
 * yaml to properties
+* yaml to json
 
 For transform a file to another format use the context menu from the file in the Project View
         ]]></description>
@@ -61,6 +62,12 @@ For transform a file to another format use the context menu from the file in the
                     class="com.github.astrapi69.fileformattransformer.action.YamlFileToPropertiesFileContextMenuAction"
                     text="To Properties"
                     description="Convert yaml to properties">
+            </action>
+
+            <action id="ProjectViewPopupMenu.Transform.Action.YamlFileToJsonFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.YamlFileToJsonFileContextMenuAction"
+                    text="To Json"
+                    description="Convert yaml to json">
             </action>
 
             <action id="ProjectViewPopupMenu.Transform.Action.XmlFileToJsonFileContextMenuAction"

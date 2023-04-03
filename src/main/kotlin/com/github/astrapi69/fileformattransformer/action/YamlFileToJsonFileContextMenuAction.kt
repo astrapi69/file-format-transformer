@@ -8,30 +8,25 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
-import io.github.astrapi69.collection.properties.PropertiesExtensions
-import io.github.astrapi69.io.StringOutputStream
-import io.github.astrapi69.yaml.YamlToPropertiesExtensions
+import io.github.astrapi69.yaml.YamlToJsonExtensions
 
-
-class YamlFileToPropertiesFileContextMenuAction: AnAction() {
+class YamlFileToJsonFileContextMenuAction: AnAction() {
 
     override fun actionPerformed(event: AnActionEvent) {
         val it: VirtualFile? = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if(it != null) {
             val loadText = VfsUtilCore.loadText(it)
-            val properties = YamlToPropertiesExtensions.toPropertiesFromYamlString(loadText)
-            val outputStream = StringOutputStream()
-            PropertiesExtensions.export(properties, outputStream)
-            val propertiesAsString = outputStream.toString()
+            val json = YamlToJsonExtensions.toJson(loadText, true)
+
 
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
                     val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                        it.parent, it.nameWithoutExtension, "properties")
-                    VfsUtil.saveText(createChildSequent, propertiesAsString)
+                        it.parent, it.nameWithoutExtension, "json")
+                    VfsUtil.saveText(createChildSequent, json)
                 } else {
-                    VfsUtil.saveText(it, propertiesAsString)
-                    it.rename(it, it.nameWithoutExtension + ".properties")
+                    VfsUtil.saveText(it, json)
+                    it.rename(it, it.nameWithoutExtension + ".json")
                 }
             }
         }
