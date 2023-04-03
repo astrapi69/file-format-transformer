@@ -32,7 +32,7 @@ kotlin {
 }
 
 dependencies {
-    implementation("io.github.astrapi69:json-extensions:2.3")
+    implementation("io.github.astrapi69:json-extensions:2.4")
     implementation("io.github.astrapi69:xml-extensions:8.2")
     implementation("io.github.astrapi69:yaml-to-prop-to-yaml:2")
     implementation("io.github.astrapi69:silly-io:2.2")
@@ -76,6 +76,7 @@ tasks {
     patchPluginXml {
         version.set(properties("pluginVersion"))
         sinceBuild.set(properties("pluginSinceBuild"))
+        untilBuild.set(properties("pluginUntilBuild"))
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
