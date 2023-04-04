@@ -11,6 +11,7 @@ An idea plugin that can transform provided input files to the following output f
 
 * json to yaml
 * json to xml
+* json to properties
 * xml to json
 * properties to yaml
 * properties to xml
@@ -46,6 +47,18 @@ For transform a file to another format use the context menu from the file in the
                     description="Convert json to yaml">
             </action>
 
+            <action id="File.Transform.Action.JsonFileToPropertiesContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToPropertiesContextMenuAction"
+                    text="To Properties"
+                    description="Convert json to properties">
+            </action>
+
+            <action id="ProjectViewPopupMenu.Transform.Action.JsonFileToXmlFileContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToXmlFileContextMenuAction"
+                    text="To Xml"
+                    description="Convert json to xml">
+            </action>
+
             <action id="File.Transform.Action.PropertiesFileToYamlFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.PropertiesFileToYamlFileContextMenuAction"
                     text="To Yaml"
@@ -76,11 +89,6 @@ For transform a file to another format use the context menu from the file in the
                     description="Convert xml to json">
             </action>
 
-            <action id="ProjectViewPopupMenu.Transform.Action.JsonFileToXmlFileContextMenuAction"
-                    class="com.github.astrapi69.fileformattransformer.action.JsonFileToXmlFileContextMenuAction"
-                    text="To Xml"
-                    description="Convert json to xml">
-            </action>
             <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="ProjectViewPopupMenuRefactoringGroup"/>
         </group>
 
