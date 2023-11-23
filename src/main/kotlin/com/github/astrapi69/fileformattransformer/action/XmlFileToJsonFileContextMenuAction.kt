@@ -21,9 +21,9 @@ class XmlFileToJsonFileContextMenuAction: AnAction() {
 
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                        it.parent, it.nameWithoutExtension, "json")
-                    VfsUtil.saveText(createChildSequent, json)
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "json")
+                    val createChildData = it.parent.createChildData(event.project, nextAvailableName)
+                    VfsUtil.saveText(createChildData, json)
                 } else {
                     VfsUtil.saveText(it, json)
                     it.rename(it, it.nameWithoutExtension + ".json")
