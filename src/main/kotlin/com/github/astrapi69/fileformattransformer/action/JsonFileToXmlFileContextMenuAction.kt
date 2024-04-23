@@ -19,9 +19,9 @@ class JsonFileToXmlFileContextMenuAction: AnAction() {
             val xml = JsonToXmlExtensions.toXml(loadText, 4)
             WriteAction.run<Throwable> {
                 if(ApplicationSettingsState.instance.newFile) {
-                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                        it.parent, it.nameWithoutExtension, "xml")
-                    VfsUtil.saveText(createChildSequent, xml)
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "xml")
+                    val createChildData = it.parent.createChildData(event.project, nextAvailableName)
+                    VfsUtil.saveText(createChildData, xml)
                 } else {
                     VfsUtil.saveText(it, xml)
                     it.rename(it, it.nameWithoutExtension + ".xml")

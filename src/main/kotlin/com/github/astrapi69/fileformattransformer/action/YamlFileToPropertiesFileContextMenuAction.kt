@@ -26,9 +26,9 @@ class YamlFileToPropertiesFileContextMenuAction: AnAction() {
 
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val createChildSequent: VirtualFile = VfsUtil.createChildSequent(event.project,
-                        it.parent, it.nameWithoutExtension, "properties")
-                    VfsUtil.saveText(createChildSequent, propertiesAsString)
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "properties")
+                    val createChildData = it.parent.createChildData(event.project, nextAvailableName)
+                    VfsUtil.saveText(createChildData, propertiesAsString)
                 } else {
                     VfsUtil.saveText(it, propertiesAsString)
                     it.rename(it, it.nameWithoutExtension + ".properties")
