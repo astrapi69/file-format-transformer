@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+## [1.8.0]
+removed deprecated calls from the jetbrains api
+
 ## [1.6.0]
 Added file transformations for:
 
