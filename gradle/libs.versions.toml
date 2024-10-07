@@ -2,7 +2,7 @@
 # libraries
 junit = "4.13.2"
 json-extensions-version = "3"
-gson-extensions-version = "2.1"
+gson-extensions-version = "3.1"
 silly-collection-version = "27"
 silly-io-version = "3"
 yaml-to-prop-to-yaml-version = "2"
