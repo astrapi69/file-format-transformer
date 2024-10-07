@@ -24,10 +24,10 @@ For transform a file to another format use the context menu from the file in the
 ## Installation
 
 - Using IDE built-in plugin system:
-  
+
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "file-format-transformer"</kbd> >
   <kbd>Install Plugin</kbd>
-  
+
 - Manually:
 
   Download the [latest release](https://github.com/astrapi69/file-format-transformer/releases/latest) and install it manually using

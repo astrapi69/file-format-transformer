@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [2.0.0]
+
+- overwrite of function getActionUpdateThread for not return ActionUpdateThread.OLD_EDT
+- update to new project structure with toml file libs.versions.toml
+- put all core dependencies to a new bundle 'core.dependencies'
+
 ## [1.8.0]
 removed deprecated calls from the jetbrains api
 

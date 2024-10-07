@@ -1,6 +1,7 @@
 package com.github.astrapi69.fileformattransformer.action
 
 import com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsState
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -9,7 +10,6 @@ import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import io.github.astrapi69.json.XmlToJsonExtensions
-
 
 class XmlFileToJsonFileContextMenuAction: AnAction() {
 
@@ -38,4 +38,8 @@ class XmlFileToJsonFileContextMenuAction: AnAction() {
             event.presentation.isEnabledAndVisible = it.extension.equals("xml")
         }
     }
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.EDT
+    }
+
 }

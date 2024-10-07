@@ -1,6 +1,7 @@
 package com.github.astrapi69.fileformattransformer.action
 
 import com.github.astrapi69.fileformattransformer.setting.ApplicationSettingsState
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -43,4 +44,8 @@ class YamlFileToPropertiesFileContextMenuAction: AnAction() {
             event.presentation.isEnabledAndVisible = it.extension.equals("yml") || it.extension.equals("yaml")
         }
     }
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.EDT
+    }
+
 }
