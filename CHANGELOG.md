@@ -6,14 +6,21 @@
 
 ## [2.0.0]
 
+### Fixed
+
 - overwrite of function getActionUpdateThread for not return ActionUpdateThread.OLD_EDT
+
+### Added
+
 - update to new project structure with toml file libs.versions.toml
 - put all core dependencies to a new bundle 'core.dependencies'
 
 ## [1.8.0]
+
 removed deprecated calls from the jetbrains api
 
 ## [1.6.0]
+
 Added file transformations for:
 
 - json to yaml
@@ -26,8 +33,11 @@ Added file transformations for:
 ## [1.0.0]
 
 ### Added
+
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/astrapi69/file-format-transformer/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/astrapi69/file-format-transformer/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.8.0...v2.0.0
+[1.8.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.6.0...v1.8.0
 [1.6.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.0.0...v1.6.0
 [1.0.0]: https://github.com/astrapi69/file-format-transformer/commits/v1.0.0
