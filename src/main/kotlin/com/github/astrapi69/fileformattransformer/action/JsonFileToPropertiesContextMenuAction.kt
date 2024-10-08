@@ -12,6 +12,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import io.github.astrapi69.collection.properties.PropertiesExtensions
 import io.github.astrapi69.gson.JsonToPropertiesExtensions
 import io.github.astrapi69.io.StringOutputStream
+import io.github.astrapi69.io.file.FileExtension
 
 class JsonFileToPropertiesContextMenuAction: AnAction() {
 
@@ -26,12 +27,12 @@ class JsonFileToPropertiesContextMenuAction: AnAction() {
 
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "properties")
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, FileExtension.PROPERTIES.extensionOnly)
                     val createChildData = it.parent.createChildData(event.project, nextAvailableName)
                     VfsUtil.saveText(createChildData, propertiesAsString)
                 } else {
                     VfsUtil.saveText(it, propertiesAsString)
-                    it.rename(it, it.nameWithoutExtension + ".properties")
+                    it.rename(it, it.nameWithoutExtension + FileExtension.PROPERTIES.extension)
                 }
             }
         }
@@ -39,13 +40,16 @@ class JsonFileToPropertiesContextMenuAction: AnAction() {
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null) {
-            event.presentation.isEnabledAndVisible = it.extension.equals("json")
+        val jsonExtension = FileExtension.JSON.extensionOnly
+        if (it != null && jsonExtension == it.extension) {
+            event.presentation.isEnabledAndVisible = true
+        } else {
+            event.presentation.isEnabledAndVisible = false
         }
     }
 
     override fun getActionUpdateThread(): ActionUpdateThread {
-        return ActionUpdateThread.EDT
+        return ActionUpdateThread.BGT
     }
 
 }

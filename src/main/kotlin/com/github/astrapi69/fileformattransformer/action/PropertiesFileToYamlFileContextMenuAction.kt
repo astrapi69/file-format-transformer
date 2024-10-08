@@ -9,6 +9,7 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
+import io.github.astrapi69.io.file.FileExtension
 import io.github.astrapi69.yaml.PropertiesToYamlExtensions
 
 class PropertiesFileToYamlFileContextMenuAction: AnAction() {
@@ -20,26 +21,28 @@ class PropertiesFileToYamlFileContextMenuAction: AnAction() {
             val yaml = PropertiesToYamlExtensions.toYamlString(loadText)
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "yaml")
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, FileExtension.YAML.extensionOnly)
                     val createChildData = it.parent.createChildData(event.project, nextAvailableName)
                     VfsUtil.saveText(createChildData, yaml)
                 } else {
                     VfsUtil.saveText(it, yaml)
-                    it.rename(it, it.nameWithoutExtension + ".yaml")
+                    it.rename(it, it.nameWithoutExtension + FileExtension.YAML.extension)
                 }
             }
         }
-
     }
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null) {
-            event.presentation.isEnabledAndVisible = it.extension.equals("properties")
+        val propertiesExtension = FileExtension.PROPERTIES.extensionOnly
+        if (it != null && propertiesExtension == it.extension) {
+            event.presentation.isEnabledAndVisible = true
+        } else {
+            event.presentation.isEnabledAndVisible = false
         }
     }
     override fun getActionUpdateThread(): ActionUpdateThread {
-        return ActionUpdateThread.EDT
+        return ActionUpdateThread.BGT
     }
 
 }

@@ -9,6 +9,7 @@ import com.intellij.openapi.application.WriteAction
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
+import io.github.astrapi69.io.file.FileExtension
 import io.github.astrapi69.json.JsonToYamlExtensions
 
 class JsonFileToYamlFileContextMenuAction: AnAction() {
@@ -20,12 +21,12 @@ class JsonFileToYamlFileContextMenuAction: AnAction() {
             val yaml = JsonToYamlExtensions.toYaml(loadText)
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "yaml")
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, FileExtension.YAML.extensionOnly)
                     val createChildData = it.parent.createChildData(event.project, nextAvailableName)
                     VfsUtil.saveText(createChildData, yaml)
                 } else {
                     VfsUtil.saveText(it, yaml)
-                    it.rename(it, it.nameWithoutExtension + ".yaml")
+                    it.rename(it, it.nameWithoutExtension + FileExtension.YAML.extension)
                 }
             }
         }
@@ -33,13 +34,16 @@ class JsonFileToYamlFileContextMenuAction: AnAction() {
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null) {
-            event.presentation.isEnabledAndVisible = it.extension.equals("json")
+        val jsonExtension = FileExtension.JSON.extensionOnly
+        if (it != null && jsonExtension == it.extension) {
+            event.presentation.isEnabledAndVisible = true
+        } else {
+            event.presentation.isEnabledAndVisible = false
         }
     }
 
     override fun getActionUpdateThread(): ActionUpdateThread {
-        return ActionUpdateThread.EDT
+        return ActionUpdateThread.BGT
     }
 
 }

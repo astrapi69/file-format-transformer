@@ -11,6 +11,7 @@ import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import io.github.astrapi69.collection.properties.PropertiesExtensions
 import io.github.astrapi69.io.StringOutputStream
+import io.github.astrapi69.io.file.FileExtension
 import java.io.FileInputStream
 
 class PropertiesFileToXmlFileContextMenuAction: AnAction() {
@@ -24,26 +25,28 @@ class PropertiesFileToXmlFileContextMenuAction: AnAction() {
             val xml = stringOutputStream.toString()
             WriteAction.run<Throwable> {
                 if (ApplicationSettingsState.instance.newFile) {
-                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, "xml")
+                    val nextAvailableName = VfsUtil.getNextAvailableName(it.parent, it.nameWithoutExtension, FileExtension.XML.extensionOnly)
                     val createChildData = it.parent.createChildData(event.project, nextAvailableName)
                     VfsUtil.saveText(createChildData, xml)
                 } else {
                     VfsUtil.saveText(it, xml)
-                    it.rename(it, it.nameWithoutExtension + ".xml")
+                    it.rename(it, it.nameWithoutExtension + FileExtension.XML.extension)
                 }
             }
         }
-
     }
 
     override fun update(event: AnActionEvent) {
         val it = event.getData(CommonDataKeys.VIRTUAL_FILE)
-        if(it != null) {
-            event.presentation.isEnabledAndVisible = it.extension.equals("properties")
+        val propertiesExtension = FileExtension.PROPERTIES.extensionOnly
+        if (it != null && propertiesExtension == it.extension) {
+            event.presentation.isEnabledAndVisible = true
+        } else {
+            event.presentation.isEnabledAndVisible = false
         }
     }
     override fun getActionUpdateThread(): ActionUpdateThread {
-        return ActionUpdateThread.EDT
+        return ActionUpdateThread.BGT
     }
 
 }
