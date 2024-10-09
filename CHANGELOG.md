@@ -46,7 +46,8 @@ Added file transformations for:
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/astrapi69/file-format-transformer/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/astrapi69/file-format-transformer/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/astrapi69/file-format-transformer/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.8.0...v2.0.0
 [1.8.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.6.0...v1.8.0
 [1.6.0]: https://github.com/astrapi69/file-format-transformer/compare/v1.0.0...v1.6.0
