@@ -1,12 +1,13 @@
 [versions]
 # libraries
 junit = "4.13.2"
-json-extensions-version = "3"
+json-extensions-version = "3.1"
 gson-extensions-version = "3.1"
 silly-collection-version = "28.1"
 silly-io-version = "3.2"
 yaml-to-prop-to-yaml-version = "2"
 xml-extensions-version = "8.2"
+pdfbox-version = "3.0.3"
 
 # plugins
 changelog = "2.2.1"
@@ -19,6 +20,7 @@ qodana = "2024.2.3"
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 json-extensions = { module = "io.github.astrapi69:json-extensions", version.ref = "json-extensions-version" }
 gson-extensions = { module = "io.github.astrapi69:gson-extensions", version.ref = "gson-extensions-version" }
+pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "pdfbox-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
 silly-io = { module = "io.github.astrapi69:silly-io", version.ref = "silly-io-version" }
 yaml-to-prop-to-yaml = { module = "io.github.astrapi69:yaml-to-prop-to-yaml", version.ref = "yaml-to-prop-to-yaml-version" }
@@ -28,6 +30,7 @@ xml-extensions = { module = "io.github.astrapi69:xml-extensions", version.ref = 
 core-dependencies = [
     "json-extensions",
     "gson-extensions",
+    "pdfbox",
     "silly-collection",
     "silly-io",
     "yaml-to-prop-to-yaml",

@@ -41,6 +41,12 @@ For transform a file to another format use the context menu from the file in the
                popup="true"
                description="Transform file formats">
 
+            <action id="File.Transform.Action.PdfFileToTextContextMenuAction"
+                    class="com.github.astrapi69.fileformattransformer.action.PdfFileToTextContextMenuAction"
+                    text="To Text"
+                    description="Convert text pdf to text">
+            </action>
+
             <action id="File.Transform.Action.JsonFileToYamlFileContextMenuAction"
                     class="com.github.astrapi69.fileformattransformer.action.JsonFileToYamlFileContextMenuAction"
                     text="To Yaml"

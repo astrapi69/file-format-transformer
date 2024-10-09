@@ -6,6 +6,14 @@
 
 ## [2.1.0-SNAPSHOT]
 
+### Added
+
+- new menu action for 'text pdf' files to transform to text files, pdf files that saves 'image pdf' are not supported 
+
+### Fixed
+
+- function getActionUpdateThread returns now ActionUpdateThread.BGT
+
 ## [2.0.0]
 
 ### Fixed
